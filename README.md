@@ -4,7 +4,8 @@
 go get -u github.com/souzagmu/svc-aws-pkg
 ```
 
-```package main
+```
+package main
 
 import (
 	"context"
@@ -39,4 +40,5 @@ func main() {
 		fmt.Printf("bucket %s\n", *bucket.Name)
 	}
 
-}```
+}
+```
