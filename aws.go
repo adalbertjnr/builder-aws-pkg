@@ -19,7 +19,7 @@ var (
 )
 
 type ProfileRegion struct {
-	profile, region string
+	Profile, Region string
 }
 
 type Aws struct {
@@ -37,8 +37,8 @@ type AwsBuilder struct {
 }
 
 func (b *AwsBuilder) MustAWSConfig(profile, region string) *AwsBuilder {
-	b.Pr.profile = profile
-	b.Pr.region = region
+	b.Pr.Profile = profile
+	b.Pr.Region = region
 	cfg, err := config.LoadDefaultConfig(context.TODO(), config.WithSharedConfigProfile(profile), config.WithDefaultRegion(region))
 	if err != nil {
 		panic(err)
@@ -85,11 +85,11 @@ func (b *AwsBuilder) WithSSM() *AwsBuilder {
 
 func (b *AwsBuilder) Build() (*Aws, error) {
 
-	if b.Pr.profile == "" {
+	if b.Pr.Profile == "" {
 		return nil, ErrNoProfile
 	}
 
-	if b.Pr.region == "" {
+	if b.Pr.Region == "" {
 		return nil, ErrNoRegion
 	}
 
