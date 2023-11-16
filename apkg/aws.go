@@ -1,4 +1,4 @@
-package main
+package apkg
 
 import (
 	"context"
@@ -14,8 +14,8 @@ import (
 )
 
 var (
-	ErrNoProfile = errors.New("profile is nil or not valid")
-	ErrNoRegion  = errors.New("region is nil or not valid")
+	ErrNoProfile = errors.New("empty profile")
+	ErrNoRegion  = errors.New("empty region")
 )
 
 type ProfileRegion struct {
