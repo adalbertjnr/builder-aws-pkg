@@ -24,7 +24,7 @@ func main() {
 		region  = "us-east-1"
 	)
 
-	c, err := apkg.NewAwsBuilder().MustAWSConfig(profile, region).WithEcr().WithS3().WithIam().Build()
+	c, err := apkg.NewAwsBuilder().MustAWSConfig(profile, region).WithS3().Build()
 	if err != nil {
 		log.Fatal(err)
 	}
